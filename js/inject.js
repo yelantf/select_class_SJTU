@@ -61,7 +61,7 @@ chrome.extension.onMessage.addListener(function(message,sender,sendResponse){
             var inyear=storage.inyear;
             var courseID=storage.courseID;
             var kehao=storage.kehao;
-            var delayTime=parseInt(storage.delayTime);
+            var delayTime=parseInt(storage.delayTime)||1800;
             var left=top.document.getElementsByTagName("frame")[1];
             //left.contentDocument.getElementById("KB1Parent").children[0].click();
             var tmp=left.contentDocument.getElementById("KB1Child").getElementsByTagName("a");
