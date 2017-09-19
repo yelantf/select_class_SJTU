@@ -1,0 +1,23 @@
+{
+    "manifest_version":2,
+    "name":"select class",
+    "version":"1.0",
+    "description":"select class from SJTU",
+    "browser_action":{
+        "default_title":"select class",
+        "default_popup":"control.html"
+    },
+    "background":{
+        "scripts":["js/background.js"]
+    },
+    "content_scripts":[
+        {
+            "matches":["http://electsys.sjtu.edu.cn/edu/student/sdtMain.aspx"],
+            "js":["js/inject.js"]
+        }
+    ],
+    "options_page":"option.html",
+    "permissions":[
+        "tabs","storage"
+    ]
+}

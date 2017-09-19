@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+	<title>select_class设置</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href="http://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+	<link href="http://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+	<link href="http://cdn.bootcss.com/awesome-bootstrap-checkbox/0.3.7/awesome-bootstrap-checkbox.min.css" rel="stylesheet">
+
+	<style>
+		.container {
+			width: 500px;
+		}
+		
+		.options {
+			margin-left: 20px;
+		}
+		
+		.jumbotron {
+			margin-top: 30px;
+			padding-top: 30px;
+			padding-bottom: 30px;
+			text-align: center;
+		}
+        
+	</style>
+</head>
+
+<body>
+	<div class="container">
+		<div class="jumbotron">
+			<h2>select_class 设置</h2>
+		</div>
+
+		<h2>选课轮次</h2>
+        <input type="radio" name="turnnum" value="抢选">抢选
+        <input type="radio" name="turnnum" value="第三轮">第三轮
+        
+        <h2>课程类型</h2>
+        <input type="radio" name="coursetype" value="0">必修课
+        <input type="radio" name="coursetype" value="1">限选课
+        <input type="radio" name="coursetype" value="2">通识课
+        <input type="radio" name="coursetype" value="3">任选课
+    </div>
+    <div class="container" id="dynamicdiv1" hidden="hidden">
+        <h2>学科或模块名称</h2>
+        <input type="text" id="typeintype" />
+    </div>
+    <div class="container" id="dynamicdiv2" hidden="hidden">
+        <h2>院系名称</h2>
+            <td><select name="OutSpeltyEP1$dpYx" id="schoolID">
+            <option value="01000">船舶海洋与建筑工程学院</option>
+            <option value="01900">海洋研究院</option>
+            <option value="02000">机械与动力工程学院</option>
+            <option value="02500">航空航天工程系</option>
+            <option value="03000">电子信息与电气工程学院</option>
+            <option value="03300">计算机科学与工程系</option>
+            <option value="03600">信息安全工程学院</option>
+            <option value="03700">软件学院</option>
+            <option value="04000">电力学院（原）</option>
+            <option value="05000">材料科学与工程学院</option>
+            <option value="07000">理学院</option>
+            <option value="07100">数学科学学院</option>
+            <option value="07200">物理与天文学院</option>
+            <option value="08000">生命科学技术学院</option>
+            <option value="08200">生物医学工程学院</option>
+            <option value="09000">人文学院</option>
+            <option value="09600">科学史与科学文化研究院</option>
+            <option value="11000">化学化工学院</option>
+            <option value="12000">安泰经济与管理学院</option>
+            <option value="13000">国际与公共事务学院</option>
+            <option value="14000">外国语学院</option>
+            <option value="14200">日语系</option>
+            <option value="15000">农业与生物学院</option>
+            <option value="16000">环境科学与工程学院</option>
+            <option value="17000">药学院</option>
+            <option value="18000">医学院（并校前）</option>
+            <option value="19000">凯原法学院</option>
+            <option value="20000">媒体与设计学院</option>
+            <option value="21000">微电子学院</option>
+            <option value="22000">继续教育学院</option>
+            <option value="23000">马克思主义学院</option>
+            <option value="24000">致远学院</option>
+            <option value="25100">体育系</option>
+            <option value="26000">巴黎高科卓越工程师学院</option>
+            <option value="27000">上海交大-南加州大学文化创意产业学院</option>
+            <option value="29100">塑性成形技术与装备研究院</option>
+            <option value="30000">医学院(原二医大)</option>
+            <option value="33000">图书馆</option>
+            <option value="35000">高等教育研究院</option>
+            <option value="35100">中美物流研究院</option>
+            <option value="36000">国际教育学院</option>
+            <option value="37000">密西根学院</option>
+            <option value="38000">上海高级金融学院</option>
+            <option value="39000">创业学院</option>
+            <option value="40000">上海中医药大学</option>
+            <option value="40001">华东师范大学</option>
+            <option value="40100">网络信息中心</option>
+            <option value="40110">高性能计算中心</option>
+            <option value="40200">教育技术中心</option>
+            <option value="40300">档案馆</option>
+            <option value="40400">分析测试中心</option>
+            <option value="40500">出版社</option>
+            <option value="40600">交大附属中学</option>
+            <option value="41000">工程训练中心</option>
+            <option value="41300">航空航天学院</option>
+            <option value="41500">系统生物医学研究院</option>
+            <option value="41600">Med-X研究院</option>
+            <option value="41700">人文艺术研究院</option>
+            <option value="41800">先进产业技术研究院</option>
+            <option value="41900">自然科学研究院</option>
+            <option value="42000">海洋水下工程科学研究院</option>
+            <option value="42100">钱学森图书馆</option>
+            <option value="42200">教学发展中心</option>
+            <option value="50100">党委办公室</option>
+            <option value="50120">党、校史研究室</option>
+            <option value="50200">党委组织部</option>
+            <option value="50300">纪委</option>
+            <option value="50400">党委宣传部</option>
+            <option value="50500">学指委、团委(含学生处、人武部)</option>
+            <option value="50501">军事教研室</option>
+            <option value="50600">工会妇委会</option>
+            <option value="50700">改革与发展研究室</option>
+            <option value="50800">党委统战部</option>
+            <option value="50900">信息安全管理办公室</option>
+            <option value="60100">校长办公室</option>
+            <option value="60200">教务处</option>
+            <option value="60300">研究生院</option>
+            <option value="60400">科学技术发展研究院</option>
+            <option value="60500">国际合作与交流处</option>
+            <option value="60520">留学生发展中心</option>
+            <option value="60600">人力资源处</option>
+            <option value="60700">财务处</option>
+            <option value="60800">保卫处</option>
+            <option value="60900">规划发展处</option>
+            <option value="61000">基建处</option>
+            <option value="61100">资产管理处</option>
+            <option value="61200">实验室与设备处</option>
+            <option value="61300">后勤保障处</option>
+            <option value="61400">211/985办公室</option>
+            <option value="61410">211/985办公室</option>
+            <option value="61700">文科建设处</option>
+            <option value="61800">发展联络处</option>
+            <option value="62000">信息化办公室</option>
+            <option value="62100">学科发展与建设处(原)</option>
+            <option value="62300">地方合作办公室</option>
+            <option value="62400">招投标办公室</option>
+            <option value="62500">科研生产质量管理办公室</option>
+            <option value="69100">其他部门</option>
+            <option value="70000">医学院</option>
+            <option value="80000">后勤集团</option>
+            <option value="80310">校医院</option>
+            <option value="80510">校医院</option>
+            <option value="90000">上海交大产业投资管理（集团）有限公司</option>
+            <option value="99000">人才交流中心</option>
+            <option value="999003">上海立信会计学院</option>
+            <option value="999007">华东理工大学</option>
+            </select></td>
+        
+        <h2>年级</h2>
+            <td width="80"><select name="OutSpeltyEP1$dpNj" id="inyear">
+            <option value="2012">2012</option>
+            <option value="2013">2013</option>
+            <option value="2014">2014</option>
+            <option selected="selected" value="2015">2015</option>
+            <option value="2016">2016</option>
+            <option value="2017">2017</option>
+            <option value="2018">2018</option>
+            <option value="2019">2019</option>
+            <option value="2020">2020</option>
+            <option value="2021">2021</option>
+            <option value="2022">2022</option>
+            </select></td>
+
+    </div>
+    </div>
+    <div class="container">
+        <h2>课程代码</h2>
+        <input type="text" id="courseID" />
+        
+        <h2>课号</h2>
+        <input type="text" id="kehao" />
+        
+        <h2>刷新延迟（建议时间1700-1800s）</h2>
+        <input type="text" id="delayTime" />
+        <br />
+        <br />
+        <button id="savebtn" class="btn btn-info">保存设置</button>
+    </div>
+	<script src="./js/option.js"></script>
+</body>
+
+</html>
