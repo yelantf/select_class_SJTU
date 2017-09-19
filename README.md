@@ -3,7 +3,7 @@ javascript写的chrome插件，选课。
 对javascript及异步编程没怎么了解，代码十分丑。
 
 ## 原理
-chrome插件对目标网站注入javascript，对网页进行控制。
+chrome插件对目标网站注入javascript，对网页进行控制。也许比selenium+python要稍微方便一点？hhh
 
 ## 环境
 google chrome浏览器
