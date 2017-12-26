@@ -12,6 +12,7 @@ scoreID[0]="SpeltyRequiredCourse1_ScoreInfo1_lblCurrentS";
 scoreID[1]="ScoreInfo1_lblCurrentS";
 scoreID[2]="ScoreInfo1_lblCurrentS";
 scoreID[3]="OutSpeltyEP1_ScoreInfo1_lblCurrentS";
+var scoreFirst;
 var mainID=new Array();
 mainID[0]="SpeltyRequiredCourse1_gridMain";
 mainID[1]="gridMain";
@@ -88,7 +89,15 @@ chrome.extension.onMessage.addListener(function(message,sender,sendResponse){
                 {
                     if (originScore==null)
                     {
-                        originScore=right.contentDocument.getElementById(scoreID[0]).innerText;
+                        for(var i=0;i<4;++i){
+                            scoreEle=right.contentDocument.getElementById(scoreID[i]);
+                            if (scoreEle!=null)
+                            {
+                                scoreFirst=i;
+                                break;
+                            }
+                        }
+                        originScore=scoreEle.innerText;
                         console.log("已选学分："+originScore);
                     }
                     if(!state)
@@ -206,8 +215,13 @@ chrome.extension.onMessage.addListener(function(message,sender,sendResponse){
                         //console.log(tds[11].innerText);
                         if(tds[11].innerText=="人数满")
                         {
+                            //console.log("nice");
+                            //right.onload=function(){setTimeout(step1,1800);};
                             right.onload=step1;
                             top.frames[2].location.href=course1;
+                            /*setTimeout(function(){
+                                top.frames[2].location.href=course1;
+                            },1000);*/
                         }
                         else
                         {
@@ -230,7 +244,7 @@ chrome.extension.onMessage.addListener(function(message,sender,sendResponse){
 
                 function checksuccess()
                 {
-                    if (right.contentDocument.getElementById(scoreID[0]).innerText!=originScore)
+                    if (right.contentDocument.getElementById(scoreID[scoreFirst]).innerText!=originScore)
                     {
                         alert("成功了！");
                         right.onload=null;
