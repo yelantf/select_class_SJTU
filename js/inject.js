@@ -13,6 +13,7 @@ scoreID[1]="ScoreInfo1_lblCurrentS";
 scoreID[2]="ScoreInfo1_lblCurrentS";
 scoreID[3]="OutSpeltyEP1_ScoreInfo1_lblCurrentS";
 var scoreFirst;
+var submitPage;
 var mainID=new Array();
 mainID[0]="SpeltyRequiredCourse1_gridMain";
 mainID[1]="gridMain";
@@ -60,7 +61,7 @@ chrome.extension.onMessage.addListener(function(message,sender,sendResponse){
             var originScore=null;
             var schoolID=storage.schoolID;
             var inyear=storage.inyear;
-            var courseID=storage.courseID;
+            var courseID=storage.courseID.toUpperCase();
             var kehao=storage.kehao;
             var delayTime=parseInt(storage.delayTime)||1800;
             var left=top.document.getElementsByTagName("frame")[1];
@@ -77,7 +78,7 @@ chrome.extension.onMessage.addListener(function(message,sender,sendResponse){
             var right=top.document.getElementsByTagName("frame")[2];
             right.onload=function(){
                 //console.log("nice!");
-                var course1="http://electsys.sjtu.edu.cn/edu/student/elect/speltyLimitedCourse.aspx?yxdm=&nj=2015&xklc=3";
+                var course1=coursepage[coursetype];
                 if(top.frames[2].location.href==warningpage){
                     right.onload=step0;
                     right.contentDocument.getElementById("CheckBox1").checked=true;
@@ -182,7 +183,7 @@ chrome.extension.onMessage.addListener(function(message,sender,sendResponse){
                     var rdbtns=tb.getElementsByTagName("input");
                     for(var i=0;i<rdbtns.length;++i)
                     {
-                        if(rdbtns[i].value==courseID)
+                        if(rdbtns[i].value.toUpperCase()==courseID)
                         {
                             right.onload=step2;
                             rdbtns[i].click();
@@ -240,11 +241,17 @@ chrome.extension.onMessage.addListener(function(message,sender,sendResponse){
                 {
                     right.onload=checksuccess;
                     right.contentDocument.getElementById(submitID[coursetype]).click();
+                    submitPage=top.frames[2].location.href;
                 }
 
                 function checksuccess()
                 {
-                    if (right.contentDocument.getElementById(scoreID[scoreFirst]).innerText!=originScore)
+                    var curScore=right.contentDocument.getElementById(scoreID[scoreFirst]);
+                    if (curScore==null){
+                        right.onload=stepFinal;
+                        top.frames[2].location.href=submitPage;
+                    }
+                    else if (curScore.innerText!=originScore)
                     {
                         alert("成功了！");
                         right.onload=null;

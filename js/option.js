@@ -107,5 +107,5 @@ document.getElementById("savebtn").onclick=function(){
     localStorage.kehao=tmpele.value;
     tmpele=document.getElementById("delayTime");
     localStorage.delayTime=tmpele.value;
-    alert("保存成功！请重新开始插件以应用新设置。");
+    alert("保存成功！请重新开始插件及选课页面以应用新设置。");
 }
